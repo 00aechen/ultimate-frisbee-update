@@ -1,0 +1,11 @@
+<div class="col-xs-12 col-sm-4 col-md-3">
+	<h2>{{ person.name }} '{{ person.year | gradYear }}</h2>
+	<h5>{{ person.nick }}</h5>
+
+	<div class="texthover">
+		<img src="{{person.img_src}}" class="img-responsive" />
+		<div class="overlay">
+			<p>{{ person.bio }}</p>
+		</div>
+	</div>
+</div>
