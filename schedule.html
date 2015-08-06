@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -11,7 +11,6 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/icons.css" type="text/css" media="screen"  charset="utf-8">
 	<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen"  charset="utf-8">
-	
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -21,20 +20,19 @@
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
-  <link href='css/style.css' rel='stylesheet' type='text/css'>
 
   <!-- Angular -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-animate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.min.js"></script>
-  
-  <!--<script type="text/javascript" src="jquery1.6.2.js"></script>-->
+
+
+  <link href='css/style.css' rel='stylesheet' type='text/css'>
 
 
 </head>
 
-<body ng-app="Roster">
+<body ng-app="Score">
 	<!-- Navigation -->
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
@@ -61,10 +59,10 @@
 							<a href="about.html">About</a>
 						</li>
 						<li>
-							<a href="#/">Roster</a>
+							<a href="roster.html">Roster</a>
 						</li>
 						<li>
-							<a href="schedule.html">Scores</a>
+							<a href="#/">Scores</a>
 						</li>
 						<li>
 							<a href="media.html">Media</a>
@@ -103,21 +101,24 @@
 			<!-- /.container -->
 		</nav>
 
-		<div class = "container page"> 
+		<div class="container page"> 
+			<h1>SCORES</h1>
+			<!-- <img src = "images/photos/scores.jpg" class = "img-responsive" /> -->
 			<br>
-			<h1>ROSTER</h1>
-			<div ng-controller="DefaultSeasonController" ngCloak>
 
-				<a class="btn btn-default" ng-repeat="season in data.season"  href="#/{{ $index }}" ng-click="setActive($index)" ng-class="{'btn-primary' : $index == activeIndex}">{{ season.years }}</a>
-				
+			<div ng-controller="DefaultScoreController">
+				<div class="row">
+					<div class="col-md-12">
+						<a ngCloak class="btn btn-default" ng-repeat="y in data.season" href="#/{{ $index }}" ng-click="setActive($index)" ng-class="{'btn-primary' : $index == activeIndex}">{{y.year}}</a>
+					</div>
+				</div>
 				<div class="my-slide-container">
 					<div ng-view ngCloak></div>
 				</div>
-
-			</div>
-
 		</div>
 		<hr>
+
+
 		<!-- Footer -->
 		<div class="footer">
 			<div class="container">
@@ -143,12 +144,9 @@
 		
 
 		<!-- Angular modules -->
-		<script src="js/rosterApp.js"></script>
-		<script src="js/services/rosters.js"></script>
-		<script src="js/filters/gradYear.js"></script>
-		<script src="js/directives/personInfo.js"></script>
-		<script src="js/controllers/DefaultSeasonController.js"></script>
-		<script src="js/controllers/RosterController.js"></script>
-
+		<script src="js/scoreApp.js"></script>
+		<script src="js/services/scores.js"></script>
+		<script src="js/controllers/DefaultScoreController.js"></script>
+		<script src="js/controllers/ScoreController.js"></script>
 	</body>
 	</html>

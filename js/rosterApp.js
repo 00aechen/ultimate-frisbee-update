@@ -1,4 +1,4 @@
-var app = angular.module('Roster', ['ngRoute']);
+var app = angular.module('Roster', ['ngAnimate','ngRoute']);
 
 app.config(function ($routeProvider)
 {

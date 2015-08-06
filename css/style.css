@@ -357,18 +357,22 @@ div.texthover .overlay {
 	background-color:rgba(0, 0, 0, 0.7);
 	color: white;
 	font-size: 1em;
-    opacity: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-transition: opacity 500ms;
-    -moz-transition: opacity 500ms;
-    -o-transition: opacity 500ms;
-    transition: opacity 500ms;
+	opacity: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
 }
 
 div.texthover .overlay p{
 	line-height: 1.5em;
 }
 div.texthover:hover .overlay {
-    opacity: 1;
+	opacity: 1;
+}
+
+.my-slide-container {
+  position:relative;
 }
